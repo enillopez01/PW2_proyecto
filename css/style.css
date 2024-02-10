@@ -1,39 +1,41 @@
-
-body {
-    padding: 20px;
-    background: #ffffff;
+* {
+    box-sizing: border-box;
 }
 
 #social {
     overflow: hidden;
     background-color: #a8a8a8;
-    height: 15px;
-    padding-bottom: 0px;
+    height: 50px;
+
 }
 
-.cuerpo {
-    border-radius: 5px;
-    margin: 10px;
+.body_1 {
+    margin: 0% 10% 0% 10%;
 }
 
-.cuerpo2 {
-    height: 1000px;
-    
+section{
+    margin: 0% 10% 0% 10%;
+}
+/*Boton volver inicio*/
+
+#btn_top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: #395a7f;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px;
 }
 
-.cuerpo2 h2 {
-    padding-top: 10px;
-    
-}
-
-
-.imgresponsive {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%;
-    height: auto;
-
+#btn_top:hover {
+    background-color: #6e9fc1;
 }
 
 
@@ -43,13 +45,10 @@ font-family: 'Playpen Sans', cursive;
 */
 
 .head {
-    background-color: rgb(49, 107, 173);
+    background-color: #395a7f;
     border-radius: 15px;
     display: block;
     position: relative;
-    padding-top: 0px;
-    width: auto;
-    height: auto;
 }
 
 
@@ -71,7 +70,7 @@ font-family: 'Playpen Sans', cursive;
 
 .menu {
     overflow: hidden;
-    background-color: #a8a8a8;
+    background-color: #acacac;
     border-radius: 10px;
 }
 
@@ -80,6 +79,7 @@ font-family: 'Playpen Sans', cursive;
     display: block;
     color: #000;
     font-size: 18px;
+    font-weight: bold;
     text-align: center;
     text-decoration: none;
     padding: 7px 7px;
@@ -93,43 +93,166 @@ font-family: 'Playpen Sans', cursive;
 
 .menu a:hover {
     color: white;
-    background-color: rgb(49, 107, 173);
+    background-color: #395a7f;
     border-radius: 15px;
     text-shadow: 2px 2px black;
 }
 
-.menu .icon{
+.menu .icon {
     display: none;
 }
 
 
 @media screen and (max-width: 600px) {
-    .menu a:not(:first-child) {display: none;}
+    .menu a:not(:first-child) {
+        display: none;
+    }
+
     .menu a.icon {
-      float: right;
-      display: block;
-    }
- }
-  
-  @media screen and (max-width: 600px) {
-    .menu.responsive {position: relative;}
-    .menu.responsive .icon {
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-    .menu.responsive a {
-      float: none;
-      display: block;
-      text-align: left;
+        float: right;
+        display: block;
     }
 }
 
-.leftcolumn {
+@media screen and (max-width: 600px) {
+    .menu.responsive {
+        position: relative;
+    }
+
+    .menu.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .menu.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+}
+
+/* Slideshow Gallery */
+
+img {
+    vertical-align: middle;
+}
+
+.slider_container {
+    position: relative;
+    border-radius: 5px;
+    padding-top: 10px;
+}
+
+.myslides {
+    display: none;
+
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: #6e9fc1;
+}
+
+.img_number {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 25px 25px 25px;
+    position: absolute;
+
+}
+
+.caption-container {
+    text-align: center;
+    background-color: #222;
+    padding: 2px 16px;
+    color: white;
+}
+
+.slider_row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.slider_column {
     float: left;
-    width: 60%;
-    height: 75px;
-    padding: 7px;
+    width: 14.27599%;
+}
+
+.demo {
+    opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+    opacity: 1;
+}
+
+
+.body_2 {
+    width: 100%;
+    text-align: center;
+    height: 900px;
+    background-color: #c1d2e6;
+    border-radius: 15px;
+
+}
+
+.body_2 h2 {
+    padding-top: 10px;
+
+}
+
+/* Primera fila pagina*/
+
+.first_row {
+    display: inline-block;
+    margin: 0 auto;
+    padding: 15px;
+    border-radius: 15px;
+    
+}
+
+.first_row p {
+    text-align: justify;
+    font-family: 'Lora', serif;
+    font-weight: 300;
+    font-size: 12px;
+
+}
+
+.imgresponsive {
+    float: left;
+    width: 50%;
+    padding-right: 2%;
+    border-radius: 10px;
+
 }
 
 .rightcolumn {
@@ -137,19 +260,19 @@ font-family: 'Playpen Sans', cursive;
     width: 39%;
     height: 75px;
     padding: 7px;
-    
+
 }
 
-.rightcolumn p{
+.rightcolumn p {
     background-color: beige;
 }
 
 
-.pie {
+.foot {
+    text-align: center;
+ margin: 0 auto;
     font-size: 20px;
-    position: relative;
-    border-style: solid;
-    border-radius: 20px;
-    border-color: black;
+    border-radius: 15px;
+    background-color: #97afca;
+    height: 200px;
 }
-

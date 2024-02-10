@@ -20,50 +20,124 @@ Enil Enrique Lopez Cruz     2016-1007-0128
     <link
         href="https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Lora:ital@0;1&family=Playpen+Sans:wght@100;400;600&display=swap"
         rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
+    <!--Boton para volver arriba-->
+    <button onclick="topFunction()" id="btn_top" title="Go to top">Top</button>
+
     <!-- Cuerpo-->
-    <div id="cuerpo">
+    <div class="body_1">
+        <div id="social">
+            <a href=""> <img src="" alt=""></a>
+            <a href=""> <img src="" alt=""></a>
+            <a href=""> <img src="" alt=""></a>
+        </div>
+
+
         <!--Encabezado-->
         <div class="head">
-            <h1>Inicio</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, nihil.</p>
+            <h1>
+                <a href="/index.html" target="_self">Classics Cars Club</a>
+            </h1>
+            <!-- Menu-->
+            <div class="menu" id="menu">
+                <a href="/index.html" target="_parent">Home</a>
+                <a href="/60's Classics.html" target="_parent">60's Classics</a>
+                <a href="/70's Classics.html" target="_self">70's Classics</a>
+                <a href="/80's Classics.html" target="_parent">80's Classics</a>
+                <a href="/index.html" target="_self" class="login">Log In</a>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div><!--Fin Menu-->
         </div>
-        <!-- Menu-->
-        <div class="menu">
-            <ul>
-                <li><a href="/index.html" target="_self">Home</a></li>
-                <li><a href="/60's Classics.html" target="_parent">60's Classics</a></li>
-                <li><a href="/70's Classics.html" target="_self">70's Classics</a></li>
-                <li><a href="/80's Classics.html" target="_parent">80's Classics</a></li>
-            </ul>
 
-        </div>
         <!--Cuerpo -->
-        <div>
+
+        <div class="body_2">
+            <h2>1970's Classics Cars</h2>
+
+            <div class="first_row">
+                <img src="/img/60_cars/gorgeous-vintage-cars-from-the-1960s_full_width.jpg" type="img/jpg"
+                    alt="gorgeous-cars-from-1960s" id="gorgeous-cars-from-1960s" class="imgresponsive">
+
+                <p class="first_row_p">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos, debitis voluptatum
+                    veniam facilis
+                    explicabo eveniet blanditiis amet pariatur. Earum sit eius sint. Quisquam, dignissimos distinctio id
+                    maxime dolor culpa iure natus iste repellendus sapiente accusantium tempora, officia velit dolores
+                    modi nemo odit cumque sit deleniti sint provident aliquam excepturi repellat. Qui neque beatae enim
+                    dolorem ipsa architecto, iusto, illum est autem minus unde dicta laboriosam! Maxime, dolores. Ipsam
+                    odio commodi, fugit excepturi quod exercitationem eveniet deleniti quidem quisquam autem quos
+                    molestiae quam asperiores minus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
+                    vel aliquam necessitatibus velit enim ab impedit! Quidem quae molestiae natus, nostrum sint
+                    blanditiis, porro officiis animi quis illo maiores consectetur. </p>
+            </div>
+
+        </div><!--Fin body_2-->
 
 
-        </div>
-        <!--Pie -->
-        <div class="pie">
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum sunt assumenda, id vitae corporis modi,
-                porro iure minus quibusdam laborum voluptatum perspiciatis veritatis eligendi reiciendis.</p>
-                <br>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde, sequi praesentium. Corrupti soluta enim
-                neque quis non et iure voluptate, aperiam, optio unde deserunt ex.</p>
-            <br>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo autem maxime dolor, veritatis, quos rerum
-                laboriosam sequi esse accusantium facilis impedit aliquam repellendus dolores beatae, sed delectus neque
-                libero deleniti?</p>
-
-        </div>
 
 
     </div>
+    <section>
+        <article>
+            <!--Pie -->
+            <div class="foot">
 
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum sunt assumenda, id vitae corporis
+                    modi,
+                    porro iure minus quibusdam laborum voluptatum perspiciatis veritatis eligendi reiciendis.</p>
+
+
+            </div>
+        </article>
+    </section>
 </body>
+<footer>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/imgResizer/imageMapResizer.min.js"></script>
+    <script type="text/javascript">
+        $('gorgeous-cars-from-1960s').imageMapResize();
+    </script>
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("menu");
+            if (x.className === "menu") {
+                x.className += " responsive";
+            } else {
+                x.className = "menu";
+            }
+        }
+    </script>
+
+
+    <script>
+        // Get the button
+        let mybutton = document.getElementById("btn_top");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+
+
+</footer>
 
 </html>
