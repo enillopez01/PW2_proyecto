@@ -2,20 +2,45 @@
     box-sizing: border-box;
 }
 
-#social {
+
+#header {
     overflow: hidden;
-    background-color: #a8a8a8;
-    height: 50px;
+    background-color: #acacac;
+    height: 150px;
 
 }
 
-.body_1 {
-    margin: 0% 10% 0% 10%;
+#header_left {
+    overflow: hidden;
+    float: left;
+    display: block;
+    position: relative;
 }
 
-section {
-    margin: 0% 10% 0% 10%;
+#header_middle {
+    position: relative;
+    
 }
+
+#header div.social {
+    overflow: hidden;
+    float: right;
+    display: block;
+    background-color: #6e9fc1;
+}
+
+.social a {
+    color: #000;
+    text-decoration: none;
+font-size: xx-large;
+}
+
+.body_1,
+section,
+header {
+    margin: 0% 2% 0% 2%;
+}
+
 
 /*Boton volver inicio*/
 
@@ -294,7 +319,7 @@ img {
     background-color: #e6e6e6;
     margin-left: auto;
     margin-right: auto;
-    
+
 }
 
 .table06 caption {
