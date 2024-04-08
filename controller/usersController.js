@@ -43,7 +43,7 @@ exports.getAllUsers = async (req, res) => {
 
     const results = {};
 
-    
+
     results.totalCount = await usersModels.countDocuments().exec();
 
     try {
@@ -80,7 +80,7 @@ exports.loginSys = async (req, res) => {
             res.status(401).send('Incorrect email or password!');
             return;
         }
-        const isMatch = await bcrypt.compare(req.body.pass, user.pass);
+        const isMatch = await bcrypt.compare(req.body.password, user.password);
         if (!isMatch) {
             res.status(401).send('Incorrect email or password!');
             return;
@@ -88,9 +88,9 @@ exports.loginSys = async (req, res) => {
             const payload = { id: user.id, email: user.email };
             const token = jwt.sign(payload, SECRET_KEY);
             res.status(200).json({ user, token });
+
+
         }
-
-
     } catch (err) {
         console.log(err);
         res.status(500).send('loginSys: There is an error in the loginSys: ' + err);
@@ -102,7 +102,6 @@ exports.loginSys = async (req, res) => {
 exports.updateUser = async (req, res) => {
     try {
         const { id } = req.params;
-
         const updtUser = ({
             name: req.body.name,
             surname: req.body.surname,
@@ -110,7 +109,6 @@ exports.updateUser = async (req, res) => {
             phone: req.body.phone,
             email: req.body.email,
             password: req.body.password
-            
         });
         const updatedUser = await usersModels.findByIdAndUpdate(id, updtUser);
         const payload = { id: updatedUser.id, email: updatedUser.email };
