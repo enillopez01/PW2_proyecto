@@ -14,8 +14,8 @@ exports.insMessage = async (req, res) => {
         })
 
         if (!req.file) {
-            return res.status(400).send('It is required an image file.')  
-        }    
+            return res.status(400).send('It is required an image file.')
+        }
 
         const MSG = await newMSG.save();
         res.status(200).json({ MSG });
@@ -29,8 +29,11 @@ exports.insMessage = async (req, res) => {
 
 //Consulta todos los mensajes
 exports.selMessages = async (req, res) => {
+    const page = parseInt(req.query.page) || 1;
+    const pageSize = parseInt(req.query.pageSize) || 5;
+    const skip = (page - 1) * pageSize;
     try {
-        const MSG = await msgeModel.find();
+        const MSG = await msgeModel.find().skip(skip).limit(pageSize);
         console.log('Select all Messages Successfully');
         res.status(200).send(MSG);
     } catch (err) {

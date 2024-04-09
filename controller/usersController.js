@@ -36,18 +36,10 @@ exports.createUser = async (req, res) => {
 /** Consulta todos los registros*/
 exports.getAllUsers = async (req, res) => {
     const page = parseInt(req.query.page) || 1;
-    const limit = parseInt(req.query.limit) || 10;
-
-    const startIndex = (page - 1) * limit;
-    const endIndex = page * limit;
-
-    const results = {};
-
-
-    results.totalCount = await usersModels.countDocuments().exec();
-
+    const pageSize = parseInt(req.query.pageSize) || 4;
+    const skip = (page - 1) * pageSize;
     try {
-        const users = await usersModels.find().limit(limit).skip(startIndex).exec();
+        const users = await usersModels.find().skip(skip).limit(pageSize);
         console.log('getAllUsers It was Executed Successfully');
         res.status(200).send(users);
     } catch (err) {
@@ -55,7 +47,6 @@ exports.getAllUsers = async (req, res) => {
         res.status(500).send('Server Error');
     }
 }
-
 
 /** Consulta registros por ID*/
 exports.getUser = async (req, res) => {
